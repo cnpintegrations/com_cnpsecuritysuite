@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_cnpsecuritysuite</name>
+    <creationDate>2015-11-05</creationDate>
+    <copyright>Copyright (C) 2015. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Tyler Oliver</author>
+    <authorEmail>tyler@cnpintegrations.com</authorEmail>
+    <authorUrl>http://www.cnpintegrations.com</authorUrl>
+    <version>1.0.0</version>
+    <description><![CDATA[
+<p>CNP Security Suite, gives reports and options to better help and understand the security features that are installed for your site. Powered by <a href="www.cnpintegrations.com">CNP Integrations.</a></p>
+]]></description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>cnpsecuritysuite.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_cnpsecuritysuite.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_cnpsecuritysuite/assets/images/s_com_cnpsecuritysuite.png" >COM_CNPSECURITYSUITE</menu>
+        <submenu>
+            
+			<menu link="option=com_cnpsecuritysuite&amp;view=settingss" view="settingss" img="components/com_cnpsecuritysuite/assets/images/s_settingss.png" alt="Cnpsecuritysuite/Settingss">COM_CNPSECURITYSUITE_TITLE_SETTINGSS</menu>
+
+			<menu link="option=com_cnpsecuritysuite&amp;view=watchfulis" view="watchfulis" img="components/com_cnpsecuritysuite/assets/images/s_watchfulis.png" alt="Cnpsecuritysuite/Watchfulis">COM_CNPSECURITYSUITE_TITLE_WATCHFULIS</menu>
+
+			<menu link="option=com_cnpsecuritysuite&amp;view=pingdoms" view="pingdoms" img="components/com_cnpsecuritysuite/assets/images/s_pingdoms.png" alt="Cnpsecuritysuite/Pingdoms">COM_CNPSECURITYSUITE_TITLE_PINGDOMS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>cnpsecuritysuite.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_cnpsecuritysuite.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_cnpsecuritysuite.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="cnpsecuritysuite"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

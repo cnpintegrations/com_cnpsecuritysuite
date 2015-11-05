@@ -43,7 +43,9 @@ class CnpsecuritysuiteViewWatchfulis extends JViewLegacy {
 
         CnpsecuritysuiteHelper::loadScripts("watchfuli");
 
-        $this->apikey = $this->getKey();
+        $vendor = Cnpsecuritysuite::getVendor(1);
+
+        $this->apikey = (isset($vendor)) ? $vendor->apikey : null;
 
         $this->sidebar = JHtmlSidebar::render();
         parent::display($tpl);
@@ -117,22 +119,6 @@ class CnpsecuritysuiteViewWatchfulis extends JViewLegacy {
         //
     }
 
-    protected function getKey ()
-    {
-        $db    = JFactory::getDbo();
-        $query = $db->getQuery(true);
- 
-        // Create the base select statement.
-        $query->select('*')
-                ->from($db->quoteName('#__cnpsecuritysuite_keys'))
-                ->where($db->quoteName('id') . ' = '. $db->quote(1));
-        $db->setQuery($query);
- 
-        // Load the results as a list of stdClass objects (see later for more options on retrieving data).
-        $results = $db->loadObjectList();
-
-        return $results[0]->apikey;
-    }
 	protected function getSortFields()
 	{
 		return array(

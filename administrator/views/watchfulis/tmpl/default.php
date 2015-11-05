@@ -1,6 +1,6 @@
 <h1 class='text-center'><i class='fa fa-wrench'></i> Watchfull I Admin Dashboard</h1>
 <hr>
-<?php if($this->installed == false): ?>
+<?php if(!$this->installed): ?>
 	<p>The Watchfuli Component is not currently installed or enabled, please contact CNP Integrations in order to add this
 	protective security measure to your site and learn more about what may happen if your site isn't watched.</p>
 <?php else : ?>

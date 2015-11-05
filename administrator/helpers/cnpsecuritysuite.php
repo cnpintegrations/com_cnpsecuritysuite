@@ -15,6 +15,27 @@ defined('_JEXEC') or die;
  */
 class CnpsecuritysuiteHelper {
 
+    /**
+    *   Gets the Vendors key and name from data base by ID
+    */
+
+    public static function getVendor ($id)
+    {
+        $db    = JFactory::getDbo();
+        $query = $db->getQuery(true);
+ 
+        // Create the base select statement.
+        $query->select('*')
+                ->from($db->quoteName('#__cnpsecuritysuite_keys'))
+                ->where($db->quoteName('id') . ' = '. $db->quote($id));
+        $db->setQuery($query);
+ 
+        // Load the results as a list of stdClass objects (see later for more options on retrieving data).
+        $results = $db->loadObjectList();
+
+        return (isset($results[0]->apikey)) ? $results[0] : null;
+    }
+
     public static function loadScripts($page = null)
     {
         $document = JFactory::getDocument();

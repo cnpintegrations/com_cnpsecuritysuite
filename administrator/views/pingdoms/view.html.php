@@ -26,8 +26,6 @@ class CnpsecuritysuiteViewPingdoms extends JViewLegacy {
      */
     public function display($tpl = null) {
         $this->state = $this->get('State');
-        
-        
 
         // Check for errors.
         if (count($errors = $this->get('Errors'))) {
@@ -38,7 +36,16 @@ class CnpsecuritysuiteViewPingdoms extends JViewLegacy {
 
         $this->addToolbar();
 
+        $vendor = Cnpsecuritysuite::getVendor(2);
+
+        $this->apikey = (isset($vendor)) ? $vendor->apikey : null;
+
+        $this->installed = CnpsecuritysuiteHelper::isInstalled('pingdom');
+
+        CnpsecuritysuiteHelper::loadScripts("pingdom");
+
         $this->sidebar = JHtmlSidebar::render();
+
         parent::display($tpl);
     }
 

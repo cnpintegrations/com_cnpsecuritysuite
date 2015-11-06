@@ -3,6 +3,11 @@
 	protective security measure to your site and learn more about what may happen if your site isn't watched.</p>
 <?php else : ?>
 	<h2>Pingdom - To be completed</h2>
+	<?php if(!$this-apikey): ?>
+		<p>You have not entered an API Key for this vendor</p>
+	<?php else : ?>
+		<?php echo $this->html; ?>
+	<?php endif; ?>
 <?php endif; ?>
 
 <script>

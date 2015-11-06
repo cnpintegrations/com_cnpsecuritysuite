@@ -63,6 +63,11 @@ $document->addStyleSheet('components/com_cnpsecuritysuite/assets/css/cnpsecurity
 				<div class="controls"><?php echo $this->form->getInput('vendor'); ?></div>
 			</div>
 
+            <div class="control-group">
+                <div class="control-label"><?php echo $this->item->vendor." Plugin Script prefix";?></div>
+                <div class="controls"><input type="text" name="" value="<?php echo $this->item->script;?>" disabled></div>
+            </div>
+
 
                 </fieldset>
             </div>

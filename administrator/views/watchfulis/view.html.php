@@ -28,8 +28,6 @@ class CnpsecuritysuiteViewWatchfulis extends JViewLegacy {
     public function display($tpl = null) {
         $this->state = $this->get('State');
         
-        
-
         // Check for errors.
         if (count($errors = $this->get('Errors'))) {
             throw new Exception(implode("\n", $errors));
@@ -41,11 +39,13 @@ class CnpsecuritysuiteViewWatchfulis extends JViewLegacy {
 
         $this->installed = CnpsecuritysuiteHelper::isInstalled('watchfulli');
 
-        CnpsecuritysuiteHelper::loadScripts("watchfuli");
+        $vendor = CnpsecuritysuiteHelper::getVendor(1);
 
-        $vendor = Cnpsecuritysuite::getVendor(1);
+        CnpsecuritysuiteHelper::loadScripts($vendor->script);
 
         $this->apikey = (isset($vendor)) ? $vendor->apikey : null;
+
+        $this->html = CnpsecuritysuiteHelper::getHtml($vendor->script);
 
         $this->sidebar = JHtmlSidebar::render();
         parent::display($tpl);

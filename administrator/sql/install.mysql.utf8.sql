@@ -3,10 +3,11 @@ CREATE TABLE IF NOT EXISTS `#__cnpsecuritysuite_keys` (
 
 `apikey` VARCHAR(255)  NOT NULL ,
 `vendor` VARCHAR(255)  NOT NULL ,
+`script` VARCHAR(255) NOT NULL,
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8_general_ci;
 
-INSERT INTO `#__cnpsecuritysuite_keys` (`vendor`) VALUES
-('Watchfuli'),
-('Pingdom');
+INSERT INTO `#__cnpsecuritysuite_keys` (`vendor`, `script`) VALUES
+('Watchfuli', 'plugin_watchfuli'),
+('Pingdom', 'plugin_pingdom');
 

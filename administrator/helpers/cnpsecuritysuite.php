@@ -36,7 +36,18 @@ class CnpsecuritysuiteHelper {
         return (isset($results[0]->apikey)) ? $results[0] : null;
     }
 
-    public static function loadScripts($page = null)
+    /**
+    *   Returns the HTML file associated with the plugin
+    */
+    public static function getHtml($plugin)
+    {
+        return file_get_contents(JPATH_ADMINISTRATOR .'/components/com_cnpsecuritysuite/assets/plugins/'.$plugin.'.html');
+    }
+
+    /**
+    *   loadScripts for the component with an optional plugin prefix to load the plugins javaScript file
+    */
+    public static function loadScripts($plugin = null)
     {
         $document = JFactory::getDocument();
      
@@ -45,15 +56,10 @@ class CnpsecuritysuiteHelper {
      
         //javascripts
         $document->addScript(JURI::base().'components/com_cnpsecuritysuite/assets/js/knockout.js');
-
-        switch($page)
+    
+        if(isset($plugin))
         {
-            case "watchfuli":
-                $document->addScript(JURI::base().'components/com_cnpsecuritysuite/assets/js/watchfuli.js');
-                break;
-            case "pingdom":
-                $document->addScript(JURI::base().'components/com_cnpsecuritysuite/assets/js/pingdom.js');
-                break;
+            $document->addScript(JURI::base().'components/com_cnpsecuritysuite/assets/plugins/'.$plugin.'.js');
         }
     }
 

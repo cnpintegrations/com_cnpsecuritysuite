@@ -36,13 +36,15 @@ class CnpsecuritysuiteViewPingdoms extends JViewLegacy {
 
         $this->addToolbar();
 
-        $vendor = Cnpsecuritysuite::getVendor(2);
+        $vendor = CnpsecuritysuiteHelper::getVendor(2);
 
         $this->apikey = (isset($vendor)) ? $vendor->apikey : null;
 
         $this->installed = CnpsecuritysuiteHelper::isInstalled('pingdom');
 
-        CnpsecuritysuiteHelper::loadScripts("pingdom");
+        CnpsecuritysuiteHelper::loadScripts($vendor->script);
+
+        $this->html = CnpsecuritysuiteHelper::getHtml($vendor->script);
 
         $this->sidebar = JHtmlSidebar::render();
 

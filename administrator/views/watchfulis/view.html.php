@@ -41,6 +41,10 @@ class CnpsecuritysuiteViewWatchfulis extends JViewLegacy {
 
         $vendor = CnpsecuritysuiteHelper::getVendor(1);
 
+        $this->notInstalledMsg = CnpsecuritysuiteHelper::getNotInstalledMsg($vendor->vendor);
+
+        $this->attackMsg = CnpsecuritysuiteHelper::getNorseAttackMsg();
+
         CnpsecuritysuiteHelper::loadScripts($vendor->script);
 
         $this->apikey = (isset($vendor)) ? $vendor->apikey : null;

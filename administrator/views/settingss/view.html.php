@@ -38,6 +38,8 @@ class CnpsecuritysuiteViewSettingss extends JViewLegacy {
 
         $this->addToolbar();
 
+        $this->attackMsg = CnpsecuritysuiteHelper::getNorseAttackMsg();
+
         $this->sidebar = JHtmlSidebar::render();
         parent::display($tpl);
     }

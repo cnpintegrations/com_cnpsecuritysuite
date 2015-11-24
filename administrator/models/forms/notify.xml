@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_CNPSECURITYSUITE_FORM_LBL_NOTIFY_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="email" type="text"
+                
+            label="COM_CNPSECURITYSUITE_FORM_LBL_NOTIFY_EMAIL"
+            description="COM_CNPSECURITYSUITE_FORM_DESC_NOTIFY_EMAIL" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            directory_stripext="true"
+            directory_hidenode="true"
+            directory_hidedefault="true"
+            alias_generator="2148659"
+            heading="h4"
+            close="true"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="name" type="text"
+                
+            label="COM_CNPSECURITYSUITE_FORM_LBL_NOTIFY_NAME"
+            description="COM_CNPSECURITYSUITE_FORM_DESC_NOTIFY_NAME" 
+                
+                
+                 required="true"  /> 
+
+       <field name="frequency" type="text" size="40" class="inputbox"
+                                                    
+            label="COM_CNPSECURITYSUITE_FORM_LBL_NOTIFY_FREQUENCY"
+            description="COM_CNPSECURITYSUITE_FORM_DESC_NOTIFY_FREQUENCY" 
+                                                     default="1" 
+                                                    
+                                                    
+                                                    filter="safehtml" />
+
+	</fieldset>
+
+</form>

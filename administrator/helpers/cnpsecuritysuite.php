@@ -94,6 +94,11 @@ class CnpsecuritysuiteHelper {
 			'index.php?option=com_cnpsecuritysuite&view=settingss',
 			$vName == 'settingss'
 		);
+      JHtmlSidebar::addEntry(
+			JText::_('Notification Settings'),
+			'index.php?option=com_cnpsecuritysuite&view=notifys',
+			$vName == 'notifys'
+		);
 		JHtmlSidebar::addEntry(
 			JText::_('COM_CNPSECURITYSUITE_TITLE_WATCHFULIS'),
 			'index.php?option=com_cnpsecuritysuite&view=watchfulis',

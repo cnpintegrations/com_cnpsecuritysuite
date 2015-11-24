@@ -114,7 +114,10 @@ class CnpsecuritysuiteHelper {
 			'Run Akeeba Backup',
 			'index.php?option=com_akeeba&view=backup'
 		);
-
+		JHTMLSidebar::addEntry(
+			'Web Security Attack Map',
+			'http://map.norsecorp.com/'
+		);
     }
 
     /**

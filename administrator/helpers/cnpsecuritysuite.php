@@ -104,6 +104,16 @@ class CnpsecuritysuiteHelper {
 			'index.php?option=com_cnpsecuritysuite&view=pingdoms',
 			$vName == 'pingdoms'
 		);
+		JHtmlSidebar::addEntry(
+			"My Joomla",
+			"https://myjoomla.com/");
+		JHtmlSidebar::addEntry(
+			"Sites Assure",
+			"http://www.sitesassure.com/");
+		JHTMLSidebar::addEntry(
+			'Run Akeeba Backup',
+			'index.php?option=com_akeeba&view=backup'
+		);
 
     }
 

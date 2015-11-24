@@ -46,6 +46,7 @@
             
 			<menu link="option=com_cnpsecuritysuite&amp;view=settingss" view="settingss" img="components/com_cnpsecuritysuite/assets/images/s_settingss.png" alt="Cnpsecuritysuite/Settingss">COM_CNPSECURITYSUITE_TITLE_SETTINGSS</menu>
 
+			<menu link="option=com_cnpsecuritysuite&amp;view=notifys" view="notifys" img="components/com_cnpsecuritysuite/assets/images/s_notifyss.png" alt="Cnpsecuritysuite/Notifys">COM_CNPSECURITYSUITE_TITLE_NOTIFYS</menu>
 			<menu link="option=com_cnpsecuritysuite&amp;view=watchfulis" view="watchfulis" img="components/com_cnpsecuritysuite/assets/images/s_watchfulis.png" alt="Cnpsecuritysuite/Watchfulis">COM_CNPSECURITYSUITE_TITLE_WATCHFULIS</menu>
 
 			<menu link="option=com_cnpsecuritysuite&amp;view=pingdoms" view="pingdoms" img="components/com_cnpsecuritysuite/assets/images/s_pingdoms.png" alt="Cnpsecuritysuite/Pingdoms">COM_CNPSECURITYSUITE_TITLE_PINGDOMS</menu>

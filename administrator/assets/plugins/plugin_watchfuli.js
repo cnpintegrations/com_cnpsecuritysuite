@@ -48,15 +48,15 @@ var viewModel = function (key)
 		var message;
 		if( numberOfRisks == 0)
 		{
-			message = "<p>You site is secured, check back again in a few weeks.</p>";
+			message = "<p>Your site is secured, check back again in a few weeks.</p>";
 		}
 		else if(numberOfRisks <= 6)
 		{
-			message = "<p>Please contact <a href='cnpintegrations.com'> CNP Integrations</a> for a two hour initial assesment.</p>"
+			message = "<p>Your site is secured however it is recommened to contact your Joomla! provider for an assessment</p>"
 		} else if (numberOfRisks <= 12) {
-			message = "<p>Please contact <a href='cnpintegrations.com'> CNP Integrations</a> for a four hour initial assesment.</p>"
+			message = "<p>Your site is in an unsafe state. Please contact your Joomla! provider in order to secure your data.</p>"
 		} else {
-			message = "<p>Please contact <a href='cnpintegrations.com'> CNP Integrations</a> for a four hour initial assesment. May require more time.</p>"
+			message = "<p>Your sites safety is in danger. It is highly recommended to contact your Joomla! provider before your site gets hacked or infected.</p>"
 		}
 
 		return message;

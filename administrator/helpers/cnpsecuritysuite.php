@@ -17,7 +17,7 @@ class CnpsecuritysuiteHelper {
 
     public static function getNotInstalledMsg ($name)
     {
-        return "<p>The ".$name." Component is not currently installed or enabled, please contact <a href='www.cnpintegrations.com'>CNP Integrations</a> in order to add this ".
+        return "<p>The ".$name." Component is not currently installed or enabled, please contact your Joomla! provider in order to add this ".
         "protective security measure to your site and learn more about what may happen if your site isn't watched.</p>";
     }
 

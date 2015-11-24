@@ -124,7 +124,13 @@ if (!empty($this->extra_sidebar))
 						
 					<?php endif; ?>
 
-					
+									<th class='left'>
+				<?php echo JHtml::_('grid.sort',  'COM_CNPSECURITYSUITE_NOTIFYS_EMAIL', 'a.`email`', $listDirn, $listOrder); ?>
+				</th>
+				<th class='left'>
+				<?php echo JHtml::_('grid.sort',  'COM_CNPSECURITYSUITE_NOTIFYS_NAME', 'a.`name`', $listDirn, $listOrder); ?>
+				</th>
+
 
 					<?php if (isset($this->items[0]->id)): ?>
 						<th width="1%" class="nowrap center hidden-phone">
@@ -187,7 +193,22 @@ if (!empty($this->extra_sidebar))
 							
 						<?php endif; ?>
 
-						
+										<td>
+				<?php if (isset($item->checked_out) && $item->checked_out && ($canEdit || $canChange)) : ?>
+					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'notifys.', $canCheckin); ?>
+				<?php endif; ?>
+				<?php if ($canEdit) : ?>
+					<a href="<?php echo JRoute::_('index.php?option=com_cnpsecuritysuite&task=notify.edit&id='.(int) $item->id); ?>">
+					<?php echo $this->escape($item->email); ?></a>
+				<?php else : ?>
+					<?php echo $this->escape($item->email); ?>
+				<?php endif; ?>
+				</td>
+				<td>
+
+					<?php echo $item->name; ?>
+				</td>
+
 
 						<?php if (isset($this->items[0]->id)): ?>
 							<td class="center hidden-phone">

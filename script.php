@@ -10,10 +10,7 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
  
-/**
- * Script file of HelloWorld component
- */
-class Com_cnpsecuritysuiteInstallerScript
+class com_cnpsecuritysuiteInstallerScript
 {
 	/**
 	 * method to install the component
@@ -29,9 +26,12 @@ class Com_cnpsecuritysuiteInstallerScript
 
 		echo $requestUrl;
 
-		exec('crontab -l', $output);
+		$output = shell_exec('crontab -l');
 
-		file_put_contents('/tmp/crontab.txt', $output.' * * * * * curl -s '.$requestUrl);
+		file_put_contents('/tmp/crontab.txt', " * * * * * curl -s ".$requestUrl."\n");
+		//file_put_contents('/tmp/crontab.txt', "");*/
+
+		//exec('echo -e "`crontab -l`\n* * * * * curl -s '.$requestUrl.'" | crontab -');
 
 		exec('crontab /tmp/crontab.txt');
 

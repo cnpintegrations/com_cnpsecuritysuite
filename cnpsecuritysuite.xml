@@ -12,7 +12,8 @@
 <p>CNP Security Suite, gives reports and options to better help and understand the security features that are installed for your site. Powered by <a href="www.cnpintegrations.com">CNP Integrations.</a></p>
 ]]></description>
     
-    
+    <!-- Runs on install/uninstall/update; New in 2.5 -->
+    <scriptfile>script.php</scriptfile>
     
     <install> <!-- Runs on install -->
         <sql>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_CNPSECURITYSUITE_TITLE_LIST_VIEW_NOTIFYS" option="View">
+        <message>
+                        <![CDATA[COM_CNPSECURITYSUITE_TITLE_LIST_VIEW_NOTIFYS_DESC]]>
+        </message>
+	</layout>
+</metadata>

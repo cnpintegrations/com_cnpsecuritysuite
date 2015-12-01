@@ -1,11 +1,11 @@
 <?php
 
 /**
- * @version     1.0.0
- * @package     com_cnpsecuritysuite
- * @copyright   Copyright (C) 2015. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Tyler Oliver <tyler@cnpintegrations.com> - http://www.cnpintegrations.com
+ * @version    CVS: 1.0.0
+ * @package    Com_Cnpsecuritysuite
+ * @author     Tyler Oliver <tyler@cnpintegrations.com>
+ * @copyright  Copyright (C) 2015. All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('JPATH_BASE') or die;
 
@@ -13,10 +13,11 @@ jimport('joomla.form.formfield');
 
 /**
  * Supports a value from an external table
+ *
+ * @since  1.6
  */
 class JFormFieldForeignKey extends JFormField
 {
-
 	/**
 	 * The form field type.
 	 *
@@ -24,36 +25,41 @@ class JFormFieldForeignKey extends JFormField
 	 * @since    1.6
 	 */
 	protected $type = 'foreignkey';
+
 	private $input_type;
+
 	private $table;
+
 	private $key_field;
+
 	private $value_field;
 
 	/**
 	 * Method to get the field input markup.
 	 *
-	 * @return    string    The field input markup.
+	 * @return   string  The field input markup.
+	 *
 	 * @since    1.6
 	 */
 	protected function getInput()
 	{
-
-		//Assign field properties.
-		//Type of input the field shows
+		// Assign field properties.
+		// Type of input the field shows
 		$this->input_type = $this->getAttribute('input_type');
 
-		//Database Table
+		// Database Table
 		$this->table = $this->getAttribute('table');
 
-		//The field that the field will save on the database
+		// The field that the field will save on the database
 		$this->key_field = (string) $this->getAttribute('key_field');
 
-		//The column that the field shows in the input
+		// The column that the field shows in the input
 		$this->value_field = (string) $this->getAttribute('value_field');
+
 		// Initialize variables.
 		$html = '';
 
-		//Load all the field options
+		// Load all the field options
 		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true);
 
@@ -71,14 +77,14 @@ class JFormFieldForeignKey extends JFormField
 
 		$input_options = 'class="' . $this->getAttribute('class') . '"';
 
-		//Depends of the type of input, the field will show a type or another
+		// Depends of the type of input, the field will show a type or another
 		switch ($this->input_type)
 		{
 			case 'list':
 			default:
 				$options = array();
 
-				//Iterate through all the results
+				// Iterate through all the results
 				foreach ($results as $result)
 				{
 					$options[] = JHtml::_('select.option', $result->{$this->key_field}, $result->{$this->value_field});
@@ -86,17 +92,18 @@ class JFormFieldForeignKey extends JFormField
 
 				$value = $this->value;
 
-				//If the value is a string -> Only one result
+				// If the value is a string -> Only one result
 				if (is_string($value))
 				{
 					$value = array($value);
 				}
-				else if (is_object($value))
-				{ //If the value is an object, let's get its properties.
+				elseif (is_object($value))
+				{
+					// If the value is an object, let's get its properties.
 					$value = get_object_vars($value);
 				}
 
-				//If the select is multiple
+				// If the select is multiple
 				if ($this->multiple)
 				{
 					$input_options .= 'multiple="multiple"';
@@ -116,8 +123,8 @@ class JFormFieldForeignKey extends JFormField
 	/**
 	 * Wrapper method for getting attributes from the form element
 	 *
-	 * @param string $attr_name Attribute name
-	 * @param mixed  $default   Optional value to return if attribute not found
+	 * @param   string  $attr_name  Attribute name
+	 * @param   mixed   $default    Optional value to return if attribute not found
 	 *
 	 * @return mixed The value of the attribute if it exists, null otherwise
 	 */
@@ -132,5 +139,4 @@ class JFormFieldForeignKey extends JFormField
 			return $default;
 		}
 	}
-
 }

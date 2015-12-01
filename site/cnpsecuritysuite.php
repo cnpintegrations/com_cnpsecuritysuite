@@ -1,10 +1,10 @@
 <?php
 /**
- * @version     1.0.0
- * @package     com_cnpsecuritysuite
- * @copyright   Copyright (C) 2015. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- * @author      Tyler Oliver <tyler@cnpintegrations.com> - http://www.cnpintegrations.com
+ * @version    CVS: 1.0.0
+ * @package    Com_Cnpsecuritysuite
+ * @author     Tyler Oliver <tyler@cnpintegrations.com>
+ * @copyright  Copyright (C) 2015. All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;

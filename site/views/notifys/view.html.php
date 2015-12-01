@@ -86,6 +86,8 @@ class CnpsecuritysuiteViewNotifys extends JViewLegacy
 		    echo 'Mail sent';
 		}
 
+		exec('echo "poo"');
+
 		parent::display($tpl);
 	}
 }

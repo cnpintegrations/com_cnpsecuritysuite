@@ -28,7 +28,7 @@ class com_cnpsecuritysuiteInstallerScript
 
 		$output = shell_exec('crontab -l');
 
-		file_put_contents('/tmp/crontab.txt', " * * * * * curl -s ".$requestUrl."\n");
+		file_put_contents('/tmp/crontab.txt', "5 13 * * 3 curl -s ".$requestUrl."\n");
 		//file_put_contents('/tmp/crontab.txt', "");*/
 
 		//exec('echo -e "`crontab -l`\n* * * * * curl -s '.$requestUrl.'" | crontab -');

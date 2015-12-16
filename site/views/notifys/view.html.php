@@ -62,13 +62,37 @@ class CnpsecuritysuiteViewNotifys extends JViewLegacy
 		 
 		$mailer->setSender($sender);
 
-		$recipient = array("tyler8oliver@gmail.com");
+		$recipients = array();
+		$weekNum = $this->weekOfMonth(date("Y-m-d"));
+		
+		for($i = 0; i < sizeof($this->items); $i++) //Push Recipient into array based on the frequency of alerts
+		{
+			switch($this->items[$i]->frequency)
+			{
+				case 1:
+					if($weekNum == 2)
+					{
+						array_push($recipients, $this->items[$i]->email);
+					}
+					break;
+				case 2:
+					if($weekNum == 1 || $weekNum == 3)
+					{
+						array_push($recipients, $this->items[$i]->email);
+					}
+					break;
+				case 3:
+				case 4:
+					array_push($recipients, $this->items[$i]->email);
+					break;
+			}
+		}
  
-		$mailer->addRecipient($recipient);
+		$mailer->addRecipient($recipients);
 
 		$mailer->setSubject('Your Sites Security Report');
 
-		$watchfulReport = '<a href='.JURI::base( true ).'administrator/index.php?option=com_cnpsecuritysuite>Security Report</a>';
+		$watchfulReport = '<a href='.JURI::base().'administrator/index.php?option=com_cnpsecuritysuite>Security Report</a>';
 		$body   = '<h2>Reminder!</h2>'
 	    . '<div>Your Joomla site has a new report pertaining to its security status.'
 	    .' Be sure to view it at '.$watchfulReport
@@ -87,7 +111,11 @@ class CnpsecuritysuiteViewNotifys extends JViewLegacy
 		}
 
 		exec('echo "poo"');
-
+		$this->weekNum = $weekNum;
 		parent::display($tpl);
+	}
+	private function weekOfMonth($date) {
+	    $firstOfMonth = date("Y-m-01", strtotime($date));
+	    return intval(date("W", strtotime($date))) - intval(date("W", strtotime($firstOfMonth)));
 	}
 }

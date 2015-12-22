@@ -109,6 +109,9 @@ var viewModel = function (key)
 					} catch (e){}
 				}
 				self.dashLoaded(true);
+			}, error: function (res)
+			{
+				alert("Invalid API Key for Watchfulli")
 			}
 		})
 	}
@@ -132,6 +135,9 @@ var viewModel = function (key)
 				}
 				self.extensions(exts)
 				self.extLoaded(true);
+			}, error: function (res)
+			{
+				alert("Invalid API Key for Watchfulli")
 			}
 		})
 	}
@@ -182,6 +188,9 @@ var viewModel = function (key)
 			{
 				console.log(res);
 				ext.vUpdate(0);
+			}, error: function (res)
+			{
+				alert("Invalid API Key for Watchfulli")
 			}
 		})
 	}

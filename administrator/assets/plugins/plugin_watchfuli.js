@@ -31,7 +31,7 @@ var viewModel = function (key)
 		}
 		else if(numberOfRisks <= 6)
 		{
-			message = "<p>CAUTION: Site Will need work.</p>"
+			message = "<p>SAFE: Site is secured but will need future work.</p>"
 		} else if (numberOfRisks <= 12) {
 			message = "<p>NEEDS ATTENTION: Security Risk.</p>"
 		} else {
